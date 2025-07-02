@@ -32,7 +32,8 @@ export default function Home() {
           <div className="hidden sm:flex gap-6 justify-center w-full">
             <Link href="#top" className="hover:text-gray-400">Home</Link>
             <Link href="#projects" className="hover:text-gray-400">Projects</Link>
-            <a href="/images/resume.pdf" target="_blank" className="hover:text-gray-400">Resume</a>
+            <a href="../public/JordanRobertsonResume.pdf" target="_blank" className="hover:text-gray-400">Resume</a>
+            <Link href="#soon" className="hover:text-gray-400">soon</Link>
             <Link href="#contact" className="hover:text-gray-400">Contact</Link>
           </div>
         </div>
