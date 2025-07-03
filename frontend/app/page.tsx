@@ -31,7 +31,7 @@ export default function Home() {
             github: 'https://github.com/jordanrobbedthesun/portfolio-website',
             bullets: [
                 'Built and deployed personal portfolio to showcase my software engineering journey and projects.',
-                'Integrated analytics, RESTful APIs, and responsive design using React, Express, and Tailwind.'
+                'Integrated RESTful APIs and responsive design using React, Express, and Tailwind.'
             ]
         },
         {
@@ -41,7 +41,7 @@ export default function Home() {
             github: 'https://github.com/jordanrobbedthesun/WealthWise_AI',
             bullets: [
                 'AI-powered mobile budgeting assistant built at ShellHacks 2024; selected as Top 20 project.',
-                'Implemented OpenAI chatbot to answer personal finance questions and provide tailored advice.',
+                'Implemented Yahoo Finance chatbot powered by OpenAI API to answer personal finance questions and provide tailored advice.',
                 'Visualized budgets using charts, and tracked monthly income/expenses with a clean mobile interface.'
             ]
         },
@@ -53,7 +53,7 @@ export default function Home() {
             bullets: [
                 'Mobile app built to empower Resident Assistants with real-time emergency response workflows, quick contact tools, facility logs, and custom quick notes.',
                 'Engineered full backend using SQLite and JavaScript, with local caching and offline support for housing rosters, quick links, and notifications.',
-                'Won $3,000 in startup funding through FGCU’s Runway Program and registered the project as a Florida LLC.'
+                'Won funding through FGCU’s Runway Program and registered the project as a Florida LLC.'
             ]
         },
         {
@@ -73,7 +73,7 @@ export default function Home() {
             stack: ['C#'],
             github: 'https://github.com/jordanrobbedthesun/PassPassProtect',
             bullets: [
-                'Solo honors project for secure password management with full CRUD support and data encryption.',
+                'Solo honors project for secure password management with full CRUD support.',
                 'Developed object-oriented entry and manager classes with GUI integration for managing login info.'
             ]
         }
@@ -84,17 +84,17 @@ export default function Home() {
             title: 'Research Assistant',
             place: 'Whitaker College of Engineering',
             date: 'Summer 2025 – Present',
-            description: 'Support faculty research efforts by contributing to software prototypes and testing frameworks in engineering contexts.'
+            description: 'Currently support Construction Management department on AI Chatbots specializing in Electrical Construction.'
         },
         {
             title: 'Hackabull 2025',
-            place: 'Participant',
+            place: 'Hacker',
             date: 'Spring 2025',
             description: 'Built Neo-Eden in a 24-hour hackathon alongside a team of 4, earning high engagement from judges.'
         },
         {
             title: 'ShellHacks 2024',
-            place: 'Participant',
+            place: 'Top 20th Hacker',
             date: 'Fall 2024',
             description: 'Co-developed WealthWise AI at Florida’s largest hackathon; ranked in Top 20 out of 260+ teams.'
         },
@@ -114,7 +114,7 @@ export default function Home() {
             title: 'Representative & Director of Recruitment',
             place: 'National Residence Hall Honorary',
             date: 'Spring 2023 – Spring 2025',
-            description: 'Represented FGCU’s NRHH chapter at national and regional conferences, connecting with other chapters and promoting our values of service and recognition. Led recruitment efforts and strengthened member engagement on campus. Earned NRHH Leadership Certification for active leadership and chapter advocacy.'
+            description: 'Represented FGCU’s NRHH chapter at national and regional conferences, connecting with other chapters and promoting our values of service and recognition. Led recruitment efforts and earned NRHH Leadership Certification for active leadership, a Bronze pin for providing outstanding leadership to my chapter by embodying the values of service and recognition, and a Golden One pin for providing support to my chapter.'
         },
         {
             title: 'President',
@@ -272,37 +272,37 @@ export default function Home() {
                         <li>
                             <a href="https://badgr.com/public/assertions/Dk6VTlHMT16LlhFaFn7pNQ" target="_blank"
                                rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                Postman API Fundamentals Student Expert – Canvas Credentials (Apr 2025)
+                                Postman API Fundamentals Student Expert – Canvas Credentials (Spring 2025)
                             </a>
                         </li>
                         <li>
                             <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=3FF16C02FE571FFB05AC4A61CF3619BD2EEE540D9D7CB32B1E994126A44EF0EB"
                                target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                Java Certified Foundations Associate – Oracle (Jun 2023)
+                                Java Certified Foundations Associate – Oracle (Fall 2023)
                             </a>
                         </li>
                         <li>
                             <a href="https://www.credly.com/badges/f8cc9142-ddee-4b97-b81e-f16533c26263/linked_in_profile" target="_blank"
                                rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                AI Foundations – IBM (Mar 2023)
+                                AI Foundations – IBM (Spring 2023)
                             </a>
                         </li>
                         <li>
                             <a href="https://www.credential.net/90b1f7d5-60b3-402f-a918-9c848db7180b#acc.RneFxjlw" target="_blank"
                                rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                HTML & CSS Coding Specialist – Knowledge Pillars (Mar 2023)
+                                HTML & CSS Coding Specialist – Knowledge Pillars (Spring 2023)
                             </a>
                         </li>
                         <li>
                             <a href="https://www.credential.net/4e241c24-4450-404c-88a8-8bc436a6736e#acc.fmPH2jRI" target="_blank"
                                rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                Python Coding Specialist – Knowledge Pillars (Dec 2022)
+                                Python Coding Specialist – Knowledge Pillars (Fall 2022)
                             </a>
                         </li>
                         <li>
                             <a href="https://www.codecademy.com/profiles/micro8180557404" target="_blank"
-                               rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                Codecademy Certificates – HTML, CSS, JS, C#, C++, UX/UI, Express, Java (2022–2025)
+                               rel="noopener noreferrer" className="text-blue-600 hover:underline">S
+                                Codecademy Certificates – HTML, CSS, JS, C#, C++, UX/UI, Express, Java (Fall 2022– Present)
                             </a>
                         </li>
                     </ul>
