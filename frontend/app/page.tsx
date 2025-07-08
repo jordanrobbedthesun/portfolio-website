@@ -30,7 +30,6 @@ export default function Home() {
         'contact',
     ]
 
-    const [menuOpen, setMenuOpen] = useState(false)
     const [currentSection, setCurrentSection] = useState<string>('about')
     const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -52,7 +51,6 @@ export default function Home() {
 
     function handleScrollToSection(id: string) {
         scrollToSection(id)
-        setMenuOpen(false)
     }
 
     async function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -90,7 +88,6 @@ export default function Home() {
                 sections={sections}
                 currentSection={currentSection}
                 scrollToSection={handleScrollToSection}
-                // Removed handleDownloadWebsite prop
             />
             <div className="flex flex-col lg:flex-row">
                 <Sidebar />

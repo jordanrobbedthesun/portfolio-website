@@ -57,7 +57,6 @@ export function Navbar({ sections, currentSection, scrollToSection }: NavbarProp
                     >
                         Resume
                     </a>
-                    {/* Removed Download PDF button */}
                 </div>
             </div>
 
