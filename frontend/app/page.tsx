@@ -73,7 +73,7 @@ export default function Home() {
 
         try {
             const response = await fetch(
-                'https://formsubmit.co/ajax/56a400433f23e4bf9b0ef67cc33e8f4e',
+                'https://formsubmit.co/ajax/BranchJ+website@proton.me',
                 {
                     method: 'POST',
                     body: formData,

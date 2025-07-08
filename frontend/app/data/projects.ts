@@ -10,6 +10,11 @@ export const projects = [
             'Developed real-time resource maps, location filters, AI-driven image recognition, and user-submitted content powered by Gemini AI.',
             'Built secure authentication, resource categorization, and a dynamic news feed using Express and MongoDB.',
         ],
+        // images: [
+        //     '/images/jordan.png',
+        //     '/images/jordan.png',
+        //     '/images/jordan.png',
+        //     ],
     },
     {
         title: 'Portfolio Website',
