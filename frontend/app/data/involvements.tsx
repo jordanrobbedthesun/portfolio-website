@@ -2,7 +2,7 @@ import React, {JSX} from 'react'
 import { scrollToSection } from '../utils/scrollToSection'
 
 export const involvements: {
-    title: string
+    title: string | JSX.Element
     place: string
     date: string
     description: string | JSX.Element
@@ -51,7 +51,20 @@ export const involvements: {
         category: 'current',
     },
     {
-        title: 'Hacker‎‎‎‎',
+        title: (
+            <>
+                <a
+                    href="#neo-eden"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        scrollToSection('neo-eden')
+                    }}
+                    className="text-blue-600 hover:underline"
+                >
+                    Hacker
+                </a>
+            </>
+        ),
         place: 'Hackabull 2025',
         date: 'Spring 2025',
         link: '#neo-eden',
@@ -83,7 +96,20 @@ export const involvements: {
         category: 'previous',
     },
     {
-        title: 'Top 20th Hacker',
+        title: (
+            <>
+                <a
+                    href="#wealthwiseai"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        scrollToSection('wealthwiseai')
+                    }}
+                    className="text-blue-600 hover:underline"
+                >
+                    Top 20th Hacker
+                </a>
+            </>
+        ),
         place: 'ShellHacks 2024',
         date: 'Fall 2024',
         link: '#wealthwiseai',

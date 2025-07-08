@@ -4,11 +4,16 @@ import React, { useState } from 'react'
 interface NavbarProps {
     sections: string[]
     currentSection: string
-    scrollToSection: (id: string) => void
-    // Removed handleDownloadWebsite prop
+    scrollToSectionAction: (id: string) => void
+    externalLinks?: { label: string; href: string }[]
 }
 
-export function Navbar({ sections, currentSection, scrollToSection }: NavbarProps) {
+export function Navbar({
+                           sections,
+                           currentSection,
+                           scrollToSectionAction,
+                           externalLinks = [],
+                       }: NavbarProps) {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
@@ -32,23 +37,40 @@ export function Navbar({ sections, currentSection, scrollToSection }: NavbarProp
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                            d={
+                                menuOpen
+                                    ? 'M6 18L18 6M6 6l12 12'
+                                    : 'M4 6h16M4 12h16M4 18h16'
+                            }
                         />
                     </svg>
                 </button>
 
                 <div className="hidden sm:flex gap-6 items-center justify-center w-full max-w-6xl mx-auto">
-                {sections.map(section => (
+                    {sections.map((section) => (
                         <button
                             key={section}
-                            onClick={() => scrollToSection(section)}
+                            onClick={() => scrollToSectionAction(section)}
                             className={`hover:text-gray-400 capitalize ${
-                                currentSection === section ? 'text-blue-400 font-bold' : ''
+                                currentSection === section
+                                    ? 'text-blue-400 font-bold'
+                                    : ''
                             }`}
                         >
                             {section}
                         </button>
                     ))}
+
+                    {externalLinks.map((link) => (
+                        <a
+                            key={link.label}
+                            href={link.href}
+                            className="hover:text-gray-400 capitalize"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+
                     <a
                         href="/JordanRobertsonResume.pdf"
                         target="_blank"
@@ -62,11 +84,11 @@ export function Navbar({ sections, currentSection, scrollToSection }: NavbarProp
 
             {menuOpen && (
                 <div className="sm:hidden mt-4 flex flex-col gap-4">
-                    {sections.map(section => (
+                    {sections.map((section) => (
                         <button
                             key={section}
                             onClick={() => {
-                                scrollToSection(section)
+                                scrollToSectionAction(section)
                                 setMenuOpen(false)
                             }}
                             className="text-left capitalize px-2"
@@ -74,6 +96,18 @@ export function Navbar({ sections, currentSection, scrollToSection }: NavbarProp
                             {section}
                         </button>
                     ))}
+
+                    {externalLinks.map((link) => (
+                        <a
+                            key={link.label}
+                            href={link.href}
+                            className="px-2 capitalize"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+
                     <a
                         href="/JordanRobertsonResume.pdf"
                         target="_blank"
@@ -83,7 +117,6 @@ export function Navbar({ sections, currentSection, scrollToSection }: NavbarProp
                     >
                         Resume
                     </a>
-                    {/* Removed Download PDF button */}
                 </div>
             )}
         </nav>

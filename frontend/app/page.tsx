@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, {useState, useEffect, useRef, useMemo} from 'react'
 
 import { Navbar } from './components/Navbar'
 import Sidebar from './components/Sidebar'
@@ -20,15 +20,26 @@ import { scrollToSection } from './utils/scrollToSection'
 export default function Home() {
     const contactRef = useRef<HTMLFormElement>(null)
 
-    const sections = [
-        'about',
-        'education',
-        'experience',
-        'involvements',
-        'projects',
-        'certifications',
-        'contact',
-    ]
+    const sections = useMemo(
+        () => [
+            'about',
+            'education',
+            'experience',
+            'involvements',
+            'projects',
+            'certifications',
+            'contact',
+        ],
+        []
+    )
+
+    const externalLinks = useMemo(
+        () => [
+            { label: 'Recipes', href: '/recipes' }
+        ],
+        []
+    )
+
 
     const [currentSection, setCurrentSection] = useState<string>('about')
     const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -87,7 +98,8 @@ export default function Home() {
             <Navbar
                 sections={sections}
                 currentSection={currentSection}
-                scrollToSection={handleScrollToSection}
+                scrollToSectionAction={handleScrollToSection}
+                externalLinks={externalLinks}
             />
             <div className="flex flex-col lg:flex-row">
                 <Sidebar />

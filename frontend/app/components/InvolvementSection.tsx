@@ -1,7 +1,7 @@
 import React, { JSX } from 'react'
 
 interface Involvement {
-    title: string
+    title: string | JSX.Element
     place: string
     date: string
     description: string | JSX.Element
@@ -33,9 +33,9 @@ export default function InvolvementsSection({ involvements }: InvolvementsSectio
                         <div key={index} className="border-l-4 border-yellow-500 pl-4">
                             <div className="flex justify-between items-center">
                                 <h4 className="text-lg font-medium text-gray-900 dark:text-white">{item.title}</h4>
-                                <span className="text-sm italic text-gray-600 dark:text-gray-300">{item.date}</span>
                             </div>
                             <p className="text-gray-800 dark:text-gray-200 font-medium">{item.place}</p>
+                                <span className="text-sm italic text-gray-600 dark:text-gray-300">{item.date}</span>
                             <div className="mt-2 text-gray-800 dark:text-gray-300 text-sm">
                                 {typeof item.description === 'string' ? (
                                     <p>{item.description}</p>

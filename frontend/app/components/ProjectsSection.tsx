@@ -27,22 +27,25 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                             className="border-l-4 border-green-600 pl-4"
                         >
                             <div className="flex justify-between items-center">
-                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
-                                <span className="text-sm italic text-gray-600 dark:text-gray-300">{date}</span>
+                                {github && (
+                                    <a
+                                        href={github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-lg font-semibold text-gray-900 dark:text-white"
+                                    >
+                                        {title}
+                                    </a>
+                                )}
+                                {!github && (
+                                    <h3
+                                        className="text-lg font-semibold text-gray-900 dark:text-white"
+                                    >
+                                        {title}
+                                    </h3>
+                                )}
                             </div>
-                            <p className="mt-1 mb-2 font-medium text-gray-800 dark:text-gray-200">
-                                Stack: {stack.join(', ')}
-                            </p>
-                            {github && (
-                                <a
-                                    href={github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 dark:text-blue-400 hover:underline mb-2 block text-sm"
-                                >
-                                    GitHub Repository
-                                </a>
-                            )}
+                            <span className="text-sm italic text-gray-600 dark:text-gray-300">{date}</span>
                             <ul className="list-disc list-inside text-sm text-gray-800 dark:text-gray-300">
                                 {bullets.map((bullet, i) => (
                                     <li key={i} className="mb-1">
@@ -50,6 +53,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                                     </li>
                                 ))}
                             </ul>
+                            <p className="mt-1 mb-2 font-medium text-gray-800 dark:text-gray-200">
+                                Stack: {stack.join(', ')}
+                            </p>
                         </div>
                     ))}
                 </div>
