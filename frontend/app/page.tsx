@@ -127,3 +127,10 @@ export default function Home() {
         </div>
     )
 }
+
+
+// Get pictures for projects, involvements, and experiences,
+// add the hover thing for certificates to all the other cards
+// Make contact section look better
+// Add resume to bottom
+// 

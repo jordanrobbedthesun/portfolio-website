@@ -37,6 +37,10 @@ export const projects = [
             'Implemented Yahoo Finance chatbot powered by OpenAI API to answer personal finance questions and provide tailored advice.',
             'Visualized budgets using charts, and tracked monthly income/expenses with a clean mobile interface.',
         ],
+        images: [
+            '/projects/wealthwiseai_2.png',
+            '/projects/wealthwiseai_1.png',
+            ],
     },
     {
         title: 'RoundReady',

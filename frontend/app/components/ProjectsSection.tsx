@@ -34,9 +34,11 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 {projects.map((project, idx) => (
                     <div
                         key={project.id ?? `${project.title}-${idx}`}
+                        id={project.id}
                         className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-300 dark:border-gray-700 flex flex-col"
                     >
-                        <div className="flex justify-between items-center mb-2">
+
+                    <div className="flex justify-between items-center mb-2">
                             {project.github ? (
                                 <a
                                     href={project.github}
@@ -73,16 +75,6 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                         </ul>
 
                         <div className="mt-auto flex space-x-3">
-                            {project.github && (
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-block bg-gray-700 hover:bg-gray-800 text-white px-3 py-1 rounded-md text-sm font-medium transition"
-                                >
-                                    GitHub
-                                </a>
-                            )}
                             {(project.videoUrl || project.images?.length) && (
                                 <button
                                     onClick={() => setModalProject(project)}
