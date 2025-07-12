@@ -9,6 +9,7 @@ export const involvements: {
     category: 'current' | 'previous' | 'upcoming'
     link?: string
     linkType?: 'anchor' | 'external'
+    images?: string[]
 }[] = [
     {
         title: 'Research Assistant',
@@ -25,6 +26,9 @@ export const involvements: {
         description:
             'Coordinated and hosted two successful hackathons with 50–60 student participants and support from local sponsors including Arthrex, Spigot, Kingland, and Hertz. Managed event logistics, prize distribution ($1,700+), workshops, and judging improvements inspired by insights from major hackathons like ShellHacks. Enhanced student engagement and strengthened community partnerships.',
         category: 'current',
+        images: [
+            '/involvements/eaglehacks_1.jpg',
+        ],
     },
     {
         title: 'Learning Hub Fellow & Ambassador',
@@ -33,6 +37,10 @@ export const involvements: {
         description:
             'Provided over 400 hours of tutoring in programming and data structures, boosting student confidence and academic performance. Represented the Whitaker College of Engineering as an ambassador at recruitment and outreach events, promoting the software engineering major and engineering programs broadly.',
         category: 'current',
+        images: [
+            '/involvements/learninghub_1.jpg',
+            '/involvements/ambassador_1.jpg',
+        ],
     },
     {
         title: 'President',
@@ -72,6 +80,9 @@ export const involvements: {
         description:
             'Collaborated in a team of 4 to develop Neo-Eden, a post-apocalyptic resource mapping and community engagement platform featuring AI-powered image analysis, real-time location tracking, and interactive maps. Led backend development including database management with MongoDB, authentication systems, news boards, and AI chatbot integration using Google Gemini AI API. Gained hands-on experience with new technologies and APIs, resulting in strong judge engagement.',
         category: 'previous',
+        images: [
+            '/involvements/hackabull_1.jpg',
+        ],
     },
     {
         title: 'Pitch Winner',
@@ -117,6 +128,9 @@ export const involvements: {
         description:
             'Co-developed WealthWise AI, a personal finance wellness app featuring an AI chatbot for spending insights and financial education. Utilized Node.js, Express, and SQLite for backend development. Ranked in the top 20 among 260+ teams. Leveraged hackathon experience to improve organization and planning of EagleHacks.',
         category: 'previous',
+        images: [
+            '/involvements/shellhacks_1.jpg',
+        ],
     },
     {
         title: 'Resident Assistant',
@@ -139,6 +153,9 @@ export const involvements: {
             </>
         ),
         category: 'previous',
+        images: [
+            '/involvements/ra_1.jpg',
+        ],
     },
     {
         title: 'Representative & Director of Recruitment',
@@ -147,6 +164,11 @@ export const involvements: {
         description:
             'Planned and executed six recruitment and engagement events within one month, demonstrating strong leadership and project management. Attended multiple regional and national NRHH conferences across the U.S., including South Carolina, Tennessee, New Mexico, and Florida, enhancing chapter visibility and leadership skills.',
         category: 'previous',
+        images: [
+            '/involvements/nrhh_1.jpg',
+            '/involvements/nrhh_2.jpg',
+            '/involvements/nrhh_3.jpg',
+        ],
     },
     {
         title: 'Hacker‎‎‎',

@@ -10,11 +10,12 @@ export const projects = [
             'Developed real-time resource maps, location filters, AI-driven image recognition, and user-submitted content powered by Gemini AI.',
             'Built secure authentication, resource categorization, and a dynamic news feed using Express and MongoDB.',
         ],
-        // images: [
-        //     '/images/jordan.png',
-        //     '/images/jordan.png',
-        //     '/images/jordan.png',
-        //     ],
+        images: [
+            '/projects/neoeden_1.jpg',
+            '/projects/neoeden_2.jpg',
+            '/projects/neoeden_3.jpg',
+            '/projects/neoeden_4.jpg',
+        ],
     },
     {
         title: 'Portfolio Website',
@@ -52,6 +53,10 @@ export const projects = [
             'Engineered full backend using SQLite and JavaScript, with local caching and offline support for housing rosters, quick links, and notifications.',
             'Won funding through FGCU’s Runway Program and registered the project as a Florida LLC.',
         ],
+        images: [
+            '/projects/roundready_2.jpg',
+            '/projects/roundready_1.jpg',
+        ],
     },
     {
         title: 'Evently',
@@ -64,6 +69,10 @@ export const projects = [
             'Created a fully modular class architecture with 11 attributes per event including title, time, and category.',
             'Supported features such as event searching, editing, deletion, and infinite expansion.',
         ],
+        images: [
+            '/projects/evently_1.png',
+            '/projects/evently_2.png',
+        ],
     },
     {
         title: 'PassPassProtect',
@@ -74,6 +83,9 @@ export const projects = [
         bullets: [
             'Solo honors project for secure password management with full CRUD support.',
             'Developed object-oriented entry and manager classes with GUI integration for managing login info.',
+        ],
+        images: [
+            '/projects/passpassprotect_1.png',
         ],
     },
 ]
