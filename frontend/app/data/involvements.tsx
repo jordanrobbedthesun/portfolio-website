@@ -28,6 +28,7 @@ export const involvements: {
         category: 'current',
         images: [
             '/involvements/eaglehacks_1.jpg',
+            '/involvements/eaglehacks_2.jpg',
         ],
     },
     {
@@ -57,6 +58,9 @@ export const involvements: {
         description:
             'Engaged in national and regional conferences, including the 2024 Anaheim conference, networking with engineers nationwide and expanding professional development opportunities.',
         category: 'current',
+        images: [
+            '/involvements/shpe_1.jpg',
+        ]
     },
     {
         title: (
@@ -155,6 +159,8 @@ export const involvements: {
         category: 'previous',
         images: [
             '/involvements/ra_1.jpg',
+            '/involvements/ra_2.jpg',
+            '/involvements/ra_3.jpg',
         ],
     },
     {
