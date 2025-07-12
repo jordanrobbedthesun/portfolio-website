@@ -17,13 +17,15 @@ interface InvolvementsSectionProps {
 }
 
 export default function InvolvementsSection({ involvements }: InvolvementsSectionProps) {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
     const grouped = {
         current: involvements.filter((item) => item.category === 'current'),
         previous: involvements.filter((item) => item.category === 'previous'),
         upcoming: involvements.filter((item) => item.category === 'upcoming'),
     }
 
-    function renderGroup(title: string, items: Involvement[]) {
+    function renderGroup(title: string, items: Involvement[], groupOffset: number) {
         if (items.length === 0) return null
 
         return (
@@ -31,11 +33,12 @@ export default function InvolvementsSection({ involvements }: InvolvementsSectio
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
                 <div className="space-y-6">
                     {items.map((item, index) => {
-                        const [expanded, setExpanded] = useState(false)
+                        const globalIndex = groupOffset + index
+                        const isExpanded = expandedIndex === globalIndex
 
                         return (
                             <div
-                                key={index}
+                                key={globalIndex}
                                 className="border-l-4 border-yellow-500 pl-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm"
                             >
                                 <div className="flex flex-col">
@@ -44,13 +47,15 @@ export default function InvolvementsSection({ involvements }: InvolvementsSectio
                                     <span className="text-sm italic text-gray-600 dark:text-gray-300">{item.date}</span>
 
                                     <button
-                                        onClick={() => setExpanded(!expanded)}
+                                        onClick={() =>
+                                            setExpandedIndex(isExpanded ? null : globalIndex)
+                                        }
                                         className="mt-3 text-sm text-blue-600 dark:text-blue-400 underline hover:opacity-80 w-fit"
                                     >
-                                        {expanded ? 'Show Less' : 'Show More'}
+                                        {isExpanded ? 'Show Less' : 'Show More'}
                                     </button>
 
-                                    {expanded && (
+                                    {isExpanded && (
                                         <div className="mt-4 text-sm text-gray-800 dark:text-gray-300 space-y-4">
                                             <div>
                                                 {typeof item.description === 'string' ? (
@@ -66,7 +71,7 @@ export default function InvolvementsSection({ involvements }: InvolvementsSectio
                                                         <img
                                                             key={i}
                                                             src={img}
-                                                            alt={`Image ${i + 1} for ${typeof item.title === 'string' ? item.title : 'involvement'}`}
+                                                            alt={`Image ${i + 1}`}
                                                             className="w-full h-48 object-cover rounded border border-gray-300 dark:border-gray-700"
                                                         />
                                                     ))}
@@ -87,9 +92,9 @@ export default function InvolvementsSection({ involvements }: InvolvementsSectio
         <section id="involvements" className="mt-10">
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Involvements</h2>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-300 dark:border-gray-700">
-                {renderGroup('Current Involvements', grouped.current)}
-                {renderGroup('Previous Involvements', grouped.previous)}
-                {renderGroup('Upcoming Involvements', grouped.upcoming)}
+                {renderGroup('Current Involvements', grouped.current, 0)}
+                {renderGroup('Previous Involvements', grouped.previous, grouped.current.length)}
+                {renderGroup('Upcoming Involvements', grouped.upcoming, grouped.current.length + grouped.previous.length)}
             </div>
         </section>
     )
