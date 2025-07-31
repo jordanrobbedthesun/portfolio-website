@@ -9,51 +9,75 @@ const recipes = [
         title: '🌮 Crockpot Chicken Tacos',
         image: '/images/chicken-tacos.jpg',
         ingredients: [
-            '3 lbs skinless boneless chicken breasts',
-            '3 tbsp taco seasoning',
-            '3/4 cup diced onion',
-            '1–2 diced green peppers',
-            'A bunch of salsa',
-            '(Optional) diced tomatoes',
-            'Fresh cilantro',
+            '3 lbs skinless, boneless chicken breasts',
+            '1.5 medium onions, finely diced',
+            '2 green bell peppers, diced',
+            '16 oz salsa',
+            'Juice of 3 limes',
+            '1 cup chicken broth (optional)',
+            '1/4 cup fresh cilantro, chopped (added at the end)',
+        ],
+        sections: [
+            {
+                heading: 'Homemade Taco Seasoning',
+                items: [
+                    '1 tbsp chili powder',
+                    '2 tsp cumin',
+                    '1 tsp garlic powder',
+                    '1 tsp onion powder',
+                    '1/2 tsp smoked paprika',
+                    '1/2 tsp dried oregano',
+                    '1/4–1/2 tsp crushed red pepper flakes (to taste)',
+                    '1 tsp salt',
+                    '1/2 tsp black pepper',
+                ],
+            },
         ],
         instructions: [
-            'Place everything (except cilantro) into a slow cooker and stir. Cook on LOW 6–8 hrs or HIGH 4–5 hrs.',
-            'Shred the chicken, add cilantro, and mix. Adjust seasoning as needed.',
-            'Serve on tortillas with toppings like cheese, lettuce, sour cream, Taco Bell sauce, or avocado.',
+            'Add 3 lbs chicken, 1.5 diced onions, 2 diced bell peppers, 16 oz salsa, lime juice, 1 cup chicken broth, and all taco seasoning to the slow cooker.',
+            'Stir to coat everything evenly.',
+            'Cook on LOW for 2 hours, then switch to HIGH for 3 hours (total 5 hours).',
+            'Shred chicken in the pot using forks. Stir in fresh cilantro.',
+            'Taste and adjust lime, salt, or seasoning if needed.',
+            'Serve on warm tortillas with toppings like cheese, sour cream, lettuce, avocado, and Taco Bell or hot sauce.',
         ],
     },
     {
-        title: '🍯 Honey Garlic Chicken with Quinoa',
-        image: '/images/honey-chicken.jpg',
+        title: '🌶️ Southwest Turkey Chili',
+        image: '/images/southwest-chili.jpg',
+        ingredients: [
+            '1 tbsp olive oil',
+            '1.5 lbs ground turkey (lean)',
+            '1 medium white onion, diced',
+            '1 green bell pepper, diced',
+            '1 yellow bell pepper, diced',
+            '1 orange bell pepper, diced',
+            '2 cloves garlic, minced',
+            '1 (8 oz) can tomato sauce (no sugar added)',
+            '1 cup low-sodium chicken broth',
+            '1 (15 oz) can black beans (optional, rinsed & drained)',
+        ],
         sections: [
             {
-                heading: 'Chicken Ingredients',
+                heading: 'Spices',
                 items: [
-                    '1.5 lbs boneless chicken thighs or breasts (bite-sized)',
-                    'Salt & pepper, 1 tsp paprika, 1 tsp garlic powder',
-                    '1/2 tsp red pepper flakes or minced chili',
+                    '1 tbsp chili powder',
+                    '2 tsp ground cumin',
+                    '1 tsp smoked paprika',
+                    '1/2 tsp dried oregano',
+                    '1/4 tsp cayenne pepper (optional)',
+                    'Salt & pepper to taste',
                 ],
-            },
-            {
-                heading: 'Sauce',
-                items: [
-                    '1/3 cup raw honey, 3 tbsp lemon/lime juice',
-                    '3–4 garlic cloves, 1–2 tsp fresh ginger',
-                    'Salt, chili flakes to taste',
-                ],
-            },
-            {
-                heading: 'Quinoa',
-                items: ['1 cup dry quinoa + 2 cups water or broth', 'Pinch of salt'],
             },
         ],
         instructions: [
-            'Rinse quinoa, simmer for 15 mins, rest 5 mins, and fluff.',
-            'Bake seasoned chicken at 400°F for 18–22 mins.',
-            'Simmer sauce on low heat for 5–6 mins until slightly thickened.',
-            'Add chicken to sauce and toss. Mix in quinoa until fully combined.',
-            'Serve and garnish with parsley, green onions, or sesame seeds.',
+            'Heat olive oil in a pot over medium heat. Sauté 1 white diced onion and 2 minced garlic cloves for ~3 minutes.',
+            'Add 1.5 lbs ground turkey and cook until no longer pink, breaking it apart as it browns.',
+            'Stir in 1 green, 1 yellow, and 1 orange bell peppers. Cook for 3–4 mins.',
+            'Add 8 oz tomato sauce, 1 cup chicken broth, 15 oz black beans (optional), and all spices. Stir well.',
+            'Bring to a simmer. Cook uncovered on low heat for 25–30 minutes.',
+            'Stir in lime juice. Adjust seasoning as needed.',
+            'Serve hot, topped with fresh cilantro. Optional toppings: avocado, Greek yogurt, cheese.',
         ],
     },
     {
@@ -138,28 +162,33 @@ export default function Recipes() {
                             loading={idx === 0 ? 'eager' : 'lazy'}
                         />
 
-                        {/* Ingredients or Sections */}
-                        {'sections' in recipe ? (
-                            recipe.sections!.map((sec, secIdx) => (
-                                <div key={secIdx} className="mb-4">
-                                    <h3 className="text-lg font-semibold text-white">{sec.heading}</h3>
-                                    <ul className="list-disc list-inside pl-2 mt-1 text-gray-300">
-                                        {sec.items.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))
-                        ) : (
+                        {/* Ingredients and Sections */}
+                        {recipe.ingredients && recipe.ingredients.length > 0 && (
                             <>
                                 <h3 className="text-lg font-semibold text-white">Ingredients</h3>
                                 <ul className="list-disc list-inside pl-2 mb-4 mt-1 text-gray-300">
-                                    {recipe.ingredients!.map((item, i) => (
-                                        <li key={i}>{item}</li>
+                                    {recipe.ingredients.map((item, i) => (
+                                        <li key={`ing-${i}`}>{item}</li>
                                     ))}
                                 </ul>
                             </>
                         )}
+
+                        {recipe.sections && recipe.sections.length > 0 && (
+                            <>
+                                {recipe.sections.map((sec, secIdx) => (
+                                    <div key={`sec-${secIdx}`} className="mb-4">
+                                        <h3 className="text-lg font-semibold text-white">{sec.heading}</h3>
+                                        <ul className="list-disc list-inside pl-2 mt-1 text-gray-300">
+                                            {sec.items.map((item, i) => (
+                                                <li key={`sec-${secIdx}-item-${i}`}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </>
+                        )}
+
 
                         <h3 className="text-lg font-semibold mt-4 text-white">Instructions</h3>
                         <ol className="list-decimal list-inside space-y-2 mt-2 pl-2 text-gray-300">
