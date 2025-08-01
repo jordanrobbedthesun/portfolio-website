@@ -12,6 +12,14 @@ export const involvements: {
     images?: string[]
 }[] = [
     {
+        title: 'Intermediate Technical Interview Prep Course',
+        place: 'CodePath',
+        date: 'Fall 2025',
+        description:
+            'Participating in CodePaths Intermediate Technical Interview Prep Course',
+        category: 'upcoming',
+    },
+    {
         title: 'Research Assistant',
         place: 'FGCU Whitaker College of Engineering',
         date: 'Summer 2025 – Present',
