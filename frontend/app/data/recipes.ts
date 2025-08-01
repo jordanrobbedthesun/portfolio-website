@@ -1,0 +1,187 @@
+// recipes.ts
+
+export interface Recipe {
+    title: string;
+    images: string[];  // changed from image:string to images:string[]
+    ingredients: string[];
+    sections?: {
+        heading: string;
+        items: string[];
+    }[];
+    instructions: string[];
+}
+
+export const recipes: Recipe[] = [
+    {
+        title: '🌮 Crockpot Chicken Tacos',
+        images: ['/images/recipes/chicken-tacos.jpg', '/images/recipes/chicken-tacos-bowl.jpg'],
+        ingredients: [
+            '3 lbs skinless, boneless chicken breasts',
+            '1.5 medium onions, finely diced',
+            '2 green bell peppers, diced',
+            '16 oz salsa',
+            'Juice of 3 limes',
+            '1 cup chicken broth (optional)',
+            '1/4 cup fresh cilantro, chopped (added at the end)',
+        ],
+        sections: [
+            {
+                heading: 'Homemade Taco Seasoning',
+                items: [
+                    '1 tbsp chili powder',
+                    '2 tsp cumin',
+                    '1 tsp garlic powder',
+                    '1 tsp onion powder',
+                    '1/2 tsp smoked paprika',
+                    '1/2 tsp dried oregano',
+                    '1/4–1/2 tsp crushed red pepper flakes (to taste)',
+                    '1 tsp salt',
+                    '1/2 tsp black pepper',
+                ],
+            },
+        ],
+        instructions: [
+            'Add 3 lbs chicken, 1.5 diced onions, 2 diced bell peppers, 16 oz salsa, juice of 3 limes, 1 cup chicken broth (if using), and all taco seasoning to the slow cooker.',
+            'Stir to coat everything evenly.',
+            'Cook on LOW for 2 hours, then switch to HIGH for 3 hours (total 5 hours).',
+            'Shred chicken in the pot using forks. Stir in fresh cilantro.',
+            'Taste and adjust lime, salt, or seasoning if needed.',
+            'Serve on warm tortillas with toppings like cheese, sour cream, lettuce, avocado, and Taco Bell or hot sauce.',
+        ],
+    },
+    {
+        title: '🌶️ Southwest Turkey Chili',
+        images: ['/images/recipes/chili.jpg', '/images/recipes/chili-bowl.jpg'],
+        ingredients: [
+            '1 tbsp olive oil',
+            '1.5 lbs ground turkey (lean)',
+            '1 medium white onion, diced',
+            '1 green bell pepper, diced',
+            '1 yellow bell pepper, diced',
+            '1 orange bell pepper, diced',
+            '2 cloves garlic, minced',
+            '1 (8 oz) can tomato sauce (no sugar added)',
+            '1 cup low-sodium chicken broth',
+            '1 (15 oz) can black beans (optional, rinsed & drained)',
+        ],
+        sections: [
+            {
+                heading: 'Spices',
+                items: [
+                    '1 tbsp chili powder',
+                    '2 tsp ground cumin',
+                    '1 tsp smoked paprika',
+                    '1/2 tsp dried oregano',
+                    '1/4 tsp cayenne pepper (optional)',
+                    'Salt & pepper to taste',
+                ],
+            },
+        ],
+        instructions: [
+            'Heat 1 tbsp olive oil in a pot over medium heat. Sauté 1 diced white onion and 2 minced garlic cloves for about 3 minutes.',
+            'Add 1.5 lbs ground turkey and cook until no longer pink, breaking it apart as it browns.',
+            'Stir in 1 green, 1 yellow, and 1 orange bell pepper (all diced). Cook for 3–4 minutes.',
+            'Add 8 oz tomato sauce, 1 cup chicken broth, and 15 oz black beans if using. Stir in all spices.',
+            'Bring to a simmer. Cook uncovered on low heat for 25–30 minutes.',
+            'Stir in lime juice if desired. Adjust seasoning to taste.',
+            'Serve hot, topped with fresh cilantro. Optional toppings: avocado, Greek yogurt, cheese.',
+        ],
+    },
+    {
+        title: '🌶️ Buffalo Stuffed Green Peppers',
+        images: ['/images/recipes/buffalo-peppers.jpg'],
+        ingredients: [
+            '4 green bell peppers, halved',
+            '1.5 lbs ground turkey',
+            '1 small onion, diced',
+            '2 garlic cloves, minced',
+            '3/4–1 cup buffalo sauce',
+            '1 cup mozzarella or Monterey Jack',
+            '1/4 cup cheddar (optional)',
+            'Salt, pepper, green onions, dressing for garnish',
+        ],
+        instructions: [
+            'Preheat oven to 400°F. Sauté 1 diced onion and 2 minced garlic cloves until fragrant.',
+            'Add 1.5 lbs ground turkey and cook until browned. Stir in 3/4–1 cup buffalo sauce and season with salt and pepper.',
+            'Fill each halved green pepper with the buffalo turkey mixture.',
+            'Place on a baking sheet and roast uncovered for 25–30 minutes.',
+            'Top with cheese and bake an additional 5–7 minutes until melted.',
+            'Garnish with chopped green onion and drizzle with ranch or blue cheese if desired.',
+        ],
+    },
+    {
+        title: '🍋 Lemon Chicken with Quinoa & Veggies',
+        images: ['/images/recipes/lemon-chicken.jpg'],
+        ingredients: [
+            '2 chicken breasts',
+            '2 tbsp olive oil',
+            '3 garlic cloves, minced',
+            '1/3 cup white wine',
+            '1/4 cup lemon juice',
+            '1 tsp oregano',
+            '1/2 tsp basil',
+            'Green beans, chopped onion, chopped zucchini',
+            'Salt, pepper, parsley',
+        ],
+        sections: [
+            {
+                heading: 'Quinoa',
+                items: [
+                    '1 cup quinoa',
+                    '2 cups water',
+                    '1 tbsp olive oil',
+                    'Salt & pepper to taste',
+                ],
+            },
+        ],
+        instructions: [
+            'Rinse and cook 1 cup quinoa in 2 cups water with 1 tbsp olive oil and salt. Simmer until water is absorbed. Fluff and set aside.',
+            'Season 2 chicken breasts with salt, pepper, oregano, and basil. Sear in 2 tbsp olive oil over medium heat.',
+            'Add 3 minced garlic cloves, 1/3 cup white wine, and 1/4 cup lemon juice to the pan.',
+            'Add chopped green beans, zucchini, and onion. Cover and simmer 6–8 minutes until veggies are tender and chicken is cooked through.',
+            'Plate quinoa and top with chicken and vegetables. Spoon sauce over the top and garnish with parsley.',
+        ],
+    },
+    {
+        title: '🍋 Lemon Garlic Chicken Pasta',
+        images: ['/images/recipes/lemon-pasta.jpg', '/images/recipes/lemon-pasta-plate.jpg'],
+        ingredients: [
+            '2 boneless, skinless chicken breasts',
+            '6 oz whole wheat or chickpea pasta (low-GI)',
+            '1 tbsp olive oil',
+            '1 small onion, finely chopped',
+            '4 cloves garlic, minced',
+            '1/2 cup dry white wine (e.g., Sauvignon Blanc)',
+            '1.5 cups low-sodium chicken broth',
+            'Juice of 1 lemon (2–3 tbsp)',
+            'Zest of 1 lemon (optional but brightens the dish)',
+        ],
+        sections: [
+            {
+                heading: 'Seasonings',
+                items: [
+                    '1 tsp dried oregano',
+                    '1/2 tsp dried thyme',
+                    '1/4 tsp paprika',
+                    '1/4–1/2 tsp crushed red pepper flakes (adjust to heat preference)',
+                    '1/2 tsp black pepper (divided)',
+                    '1/2 tsp salt (divided)',
+                    '2 tbsp fresh chopped parsley (for garnish)',
+                ],
+            },
+        ],
+        instructions: [
+            'Bring a pot of salted water to a boil. Cook pasta until al dente. Drain and set aside.',
+            'Pat chicken dry. Season both sides with 1/2 tsp salt, 1/4 tsp black pepper, 1/4 tsp paprika, and 1/2 tsp oregano.',
+            'Heat olive oil in a large skillet over medium heat.',
+            'Sear chicken for 5–6 minutes per side until golden and cooked through (internal temp 165°F). Remove from pan and let rest, then slice thinly.',
+            'In the same skillet, add chopped onion. Sauté 3–4 minutes.',
+            'Add garlic and cook for 1 more minute until fragrant.',
+            'Pour in 1/2 cup white wine and scrape the bottom to lift browned bits. Simmer 2–3 minutes to reduce by half.',
+            'Stir in 1.5 cups chicken broth, juice and zest of lemon, remaining 1/2 tsp oregano, 1/2 tsp thyme, remaining 1/4 tsp black pepper, 1/4 tsp paprika, and 1/4 tsp red pepper flakes.',
+            'Simmer 5–6 minutes until slightly reduced.',
+            'Add sliced chicken and pasta to skillet. Toss well to coat in sauce.',
+            'Top with chopped parsley. Serve warm.',
+        ],
+    },
+]
