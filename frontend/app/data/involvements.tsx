@@ -17,7 +17,7 @@ export const involvements: {
         date: 'Fall 2025',
         description:
             'Participating in CodePaths Intermediate Technical Interview Prep Course',
-        category: 'upcoming',
+        category: 'current',
     },
     {
         title: 'Research Assistant',
@@ -96,6 +96,32 @@ export const involvements: {
             '/involvements/hackabull_1.jpg',
         ],
     },
+        {
+            title: (
+                <>
+                    <a
+                        href="#imposture"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            scrollToSection('imposture')
+                        }}
+                        className="text-blue-600 hover:underline"
+                    >
+                        Top 11 Hacker, 2nd Place Google Cloud ADK Featured Challenge
+                    </a>
+                </>
+            ),
+            place: 'ShellHacks 2025',
+            date: 'Fall 2025',
+            link: '#imposture',
+            linkType: 'anchor',
+            description:
+                'Collaborated in a team of 4 to develop iMPOSTURE, a real-time posture analyzer and recommendation system using computer vision models from Google MediaPipe and YOLOv11.',
+            category: 'previous',
+            // images: [
+            //     '/involvements/shellhacks2025_1.jpg',
+            // ],
+        },
     {
         title: 'Pitch Winner',
         place: 'FGCU Runway Program 1.0',
@@ -183,13 +209,6 @@ export const involvements: {
             '/involvements/nrhh_2.jpg',
             '/involvements/nrhh_3.jpg',
         ],
-    },
-    {
-        title: 'Hacker‎‎‎',
-        place: 'ShellHacks 2025',
-        date: 'Fall 2025',
-        description: 'Upcoming Hackathon 9/26 – 9/28.',
-        category: 'upcoming',
     },
     {
         title: 'Hacker‎',

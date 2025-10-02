@@ -18,6 +18,24 @@ export const projects = [
         ],
     },
     {
+        title: 'iMPOSTURE',
+        date: 'Fall 2025',
+        id: 'imposture',
+        stack: ['Python', 'Google MediaPipe', 'YOLOv11', 'Google Cloud ADK'],
+        github: 'https://github.com/jordanrobbedthesun/imposture',
+        // bullets: [
+        //     'Designed and implemented a mobile platform that connects users to community resources using AI-powered analysis and location-based services.',
+        //     'Developed real-time resource maps, location filters, AI-driven image recognition, and user-submitted content powered by Gemini AI.',
+        //     'Built secure authentication, resource categorization, and a dynamic news feed using Express and MongoDB.',
+        // ],
+        // images: [
+        //     '/projects/neoeden_1.jpg',
+        //     '/projects/neoeden_2.jpg',
+        //     '/projects/neoeden_3.jpg',
+        //     '/projects/neoeden_4.jpg',
+        // ],
+    },
+    {
         title: 'Portfolio Website',
         date: 'Fall 2024 – Present',
         stack: ['React', 'Next.js', 'Node.js', 'Express'],
