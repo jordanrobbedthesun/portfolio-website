@@ -23,11 +23,13 @@ export const projects = [
         id: 'imposture',
         stack: ['Python', 'Google MediaPipe', 'YOLOv11', 'Google Cloud ADK'],
         github: 'https://github.com/jordanrobbedthesun/imposture',
-        // bullets: [
-        //     'Designed and implemented a mobile platform that connects users to community resources using AI-powered analysis and location-based services.',
-        //     'Developed real-time resource maps, location filters, AI-driven image recognition, and user-submitted content powered by Gemini AI.',
-        //     'Built secure authentication, resource categorization, and a dynamic news feed using Express and MongoDB.',
-        // ],
+        bullets: [
+            'Developed a real-time desktop app in a team of 4 that monitors posture and provides recommendations',
+            'Built computer vision pipeline utilizing Google MediaPipe and YOLOv11 for pose and phone detection',
+            'Implemented Google ADK to create 3 agents that analyze posture, detect phones, and monitor noise',
+            'Integrated Google Cloud Logging for real-time data streaming recording over 38,000 rows of user data',
+            'Achieved Top 11 overall and 2nd place in Google Cloud ADK Featured Challenge among 1400+ teams',
+        ],
         // images: [
         //     '/projects/neoeden_1.jpg',
         //     '/projects/neoeden_2.jpg',
