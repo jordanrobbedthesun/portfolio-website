@@ -58,6 +58,12 @@ export const involvements: {
         description:
             'Led a vibrant club of 20–30 active weekly members, facilitating technical workshops, alumni/company panels, and social events to promote software engineering on campus. Cultivated partnerships with local businesses and alumni employers, contributing to sustained growth and community engagement.',
         category: 'current',
+        images: [
+            '/involvements/cssec_1.jpg',
+            '/involvements/cssec_2.jpg',
+            '/involvements/cssec_3.jpg',
+            '/involvements/cssec_4.jpg',
+        ],
     },
     {
         title: 'Member',
@@ -118,9 +124,9 @@ export const involvements: {
             description:
                 'Collaborated in a team of 4 to develop iMPOSTURE, a real-time posture analyzer and recommendation system using computer vision models from Google MediaPipe and YOLOv11.',
             category: 'previous',
-            // images: [
-            //     '/involvements/shellhacks2025_1.jpg',
-            // ],
+            images: [
+                '/involvements/shellhacks2025_1.png',
+            ],
         },
     {
         title: 'Pitch Winner',
@@ -214,8 +220,11 @@ export const involvements: {
         title: 'Hacker‎',
         place: 'KnightHacks 2025',
         date: 'Fall 2025',
-        description: 'Upcoming Hackathon x/xx – x/xx.',
-        category: 'upcoming',
+        description: 'Participated and completed KnightHacks 2025.',
+        category: 'previous',
+        images: [
+            '/involvements/knighthacks2025_1.png',
+        ],
     },
     {
         title: 'Hacker‎‎',

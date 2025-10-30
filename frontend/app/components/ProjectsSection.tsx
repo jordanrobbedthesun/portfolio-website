@@ -1,27 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
-
-interface Project {
-    title: string
-    date: string
-    id?: string
-    stack: string[]
-    github?: string
-    videoUrl?: string
-    images?: string[]
-    bullets: string[]
-}
+import type { ProjectItem } from '../types/content'
+import Gallery from './Gallery'
 
 interface ProjectsSectionProps {
-    projects: Project[]
+    projects: ProjectItem[]
     scrollToSection?: (id: string) => void
 }
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
-    const [modalProject, setModalProject] = useState<Project | null>(null)
+    const [modalProject, setModalProject] = useState<ProjectItem | null>(null)
+    const [modalImages, setModalImages] = useState<string[] | null>(null)
 
     function closeModal() {
         setModalProject(null)
@@ -117,20 +108,22 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                                     muted
                                     loop
                                 />
-                            ) : modalProject.images?.length ? (
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                                    {modalProject.images.map((img, i) => (
-                                        <Image
-                                            key={i}
-                                            src={img}
-                                            alt={`${modalProject.title} demo ${i + 1}`}
-                                            width={600}
-                                            height={400}
-                                            className="rounded shadow"
-                                        />
-                                    ))}
-                                </div>
-                            ) : null}
+                            ) : (
+                                <ModalGallery
+                                    project={modalProject}
+                                    images={modalImages ?? modalProject.images ?? []}
+                                    onNeedImages={async (dir) => {
+                                        if (!dir) return
+                                        try {
+                                            const res = await fetch(`/api/images?dir=${encodeURIComponent(dir)}`)
+                                            const data = await res.json()
+                                            setModalImages(Array.isArray(data.images) ? data.images : [])
+                                        } catch {
+                                            setModalImages([])
+                                        }
+                                    }}
+                                />
+                            )}
 
                             <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 mb-4">
                                 {modalProject.bullets.map((bullet, i) => (
@@ -154,4 +147,35 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             </AnimatePresence>
         </section>
     )
+}
+
+function ModalGallery({
+    project,
+    images,
+    onNeedImages,
+}: {
+    project: ProjectItem
+    images: string[]
+    onNeedImages: (dir?: string) => void
+}) {
+    useEffect(() => {
+        if ((!images || images.length === 0) && project.imagesDir) {
+            onNeedImages(project.imagesDir)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [project])
+
+    if (images && images.length > 0) {
+        return (
+            <Gallery
+                images={images}
+                columns={{ base: 1, sm: 2 }}
+                itemHeight={240}
+                sizes="(max-width: 640px) 100vw, 50vw"
+                altBase={`${project.title} demo`}
+                className="mb-4"
+            />
+        )
+    }
+    return null
 }

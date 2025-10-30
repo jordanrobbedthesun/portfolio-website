@@ -1,15 +1,5 @@
 // recipes.ts
-
-export interface Recipe {
-    title: string;
-    images: string[];  // changed from image:string to images:string[]
-    ingredients: string[];
-    sections?: {
-        heading: string;
-        items: string[];
-    }[];
-    instructions: string[];
-}
+import type { Recipe } from '../types/content'
 
 export const recipes: Recipe[] = [
     {
@@ -111,7 +101,7 @@ export const recipes: Recipe[] = [
     },
     {
         title: '🍋 Lemon Chicken with Quinoa & Veggies',
-        images: ['/images/recipes/lemon-chicken.jpg'],
+        images: ['/images/recipes/lemon-chicken.png'],
         ingredients: [
             '2 chicken breasts',
             '2 tbsp olive oil',

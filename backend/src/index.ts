@@ -15,6 +15,8 @@ app.get("/", (req, res) => {
 // Get all projects
 app.get("/projects", async (req, res) => {
      const projects = await prisma.project.findMany();
+     // Cache for 60 seconds in CDNs and 30 seconds in browsers as a conservative default
+     res.set('Cache-Control', 'public, s-maxage=60, max-age=30')
      res.json(projects);
 });
 

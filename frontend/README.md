@@ -20,6 +20,27 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Images: easy add/change workflow
+
+You can add images in two ways:
+
+1) Explicit list in data files (simple):
+- Edit `app/data/recipes.ts` and provide the `images` array for a recipe.
+
+2) Drop-in folder (no code edits):
+- Create a folder under `public/images/recipes/<your-folder>` and drop your images there (jpg, jpeg, png, webp, gif).
+- In `app/data/recipes.ts`, set `imagesDir: "/images/recipes/<your-folder>"` for that recipe and omit the `images` array.
+- The app will auto-list files in that folder at runtime (server-side) and render them only when the recipe is expanded.
+
+Projects and Involvements can also load images from folders without code changes:
+
+- Put images under `public/projects/<project-id>/` or `public/involvements/<slug>/`.
+- In the data object, set `imagesDir: "/projects/<project-id>"` (or `/involvements/<slug>`). If `images` is omitted, the UI will fetch `/api/images?dir=...` at runtime to list files.
+
+Notes:
+- Recipes page resolves images server-side (no network roundtrip) if you use `imagesDir` there.
+- Home page sections fetch via `/api/images` when you expand an item or open the demo modal; that keeps initial load light.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
