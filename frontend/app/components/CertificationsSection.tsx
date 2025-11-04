@@ -40,23 +40,23 @@ const certifications = [
 export default function CertificationsSection() {
     return (
         <section id="certifications" className="mt-16">
-            <h2 className="text-2xl font-bold mb-4 dark:text-gray-100">Certifications</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-100">Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {certifications.map(({ title, issuer, date, url }, idx) => (
                     <div
                         key={idx}
-                        className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl p-4 shadow transition-shadow hover:shadow-lg"
+                        className="bg-gray-800 border border-gray-700 rounded-xl p-4 shadow transition-shadow hover:shadow-lg"
                     >
                         <a
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 dark:text-blue-400 font-semibold text-md hover:underline"
+                            className="text-blue-400 font-semibold text-md hover:underline"
                         >
                             {title}
                         </a>
-                        <p className="text-sm text-gray-700 dark:text-gray-400">{issuer}</p>
-                        <p className="text-sm italic text-gray-500 dark:text-gray-400">{date}</p>
+                        <p className="text-sm text-gray-400">{issuer}</p>
+                        <p className="text-sm italic text-gray-400">{date}</p>
                     </div>
                 ))}
             </div>

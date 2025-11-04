@@ -20,13 +20,13 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
     return (
         <section id="projects" className="mt-10">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Projects</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project, idx) => (
                     <div
                         key={project.id ?? `${project.title}-${idx}`}
                         id={project.id}
-                        className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-300 dark:border-gray-700 flex flex-col"
+                        className="bg-gray-800 p-6 rounded-lg shadow border border-gray-700 flex flex-col"
                     >
 
                     <div className="flex justify-between items-center mb-2">
@@ -35,29 +35,29 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-lg font-semibold text-gray-900 dark:text-white hover:underline"
+                                    className="text-lg font-semibold text-white hover:underline"
                                 >
                                     {project.title}
                                 </a>
                             ) : (
-                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+                                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
                             )}
-                            <span className="text-sm italic text-gray-600 dark:text-gray-300">{project.date}</span>
+                            <span className="text-sm italic text-gray-300">{project.date}</span>
                         </div>
 
-                        <p className="mb-3 text-gray-800 dark:text-gray-300 font-medium">
+                        <p className="mb-3 text-gray-300 font-medium">
                             Stack:{' '}
                             {project.stack.map((tech) => (
                                 <span
                                     key={tech}
-                                    className="inline-block bg-green-600 text-white text-xs font-semibold rounded-full px-2 py-0.5 mr-1 mb-1"
+                                    className="inline-block bg-green-700 text-white text-xs font-semibold rounded-full px-2 py-0.5 mr-1 mb-1"
                                 >
                   {tech}
                 </span>
                             ))}
                         </p>
 
-                        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 flex-1 mb-4">
+                        <ul className="list-disc list-inside text-gray-300 flex-1 mb-4">
                             {project.bullets.map((bullet, i) => (
                                 <li key={i} className="mb-1 text-sm">
                                     {bullet}
@@ -91,13 +91,13 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                         onClick={closeModal}
                     >
                         <motion.div
-                            className="bg-white dark:bg-gray-900 rounded-lg max-w-3xl w-full max-h-full overflow-auto p-6 relative"
+                            className="bg-gray-900 rounded-lg max-w-3xl w-full max-h-full overflow-auto p-6 relative border border-gray-700"
                             initial={{ scale: 0.8 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 0.8 }}
                             onClick={(e) => e.stopPropagation()} // Prevent close on inner click
                         >
-                            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{modalProject.title} Demo</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-white">{modalProject.title} Demo</h3>
 
                             {modalProject.videoUrl ? (
                                 <video
@@ -125,7 +125,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                                 />
                             )}
 
-                            <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 mb-4">
+                            <ul className="list-disc list-inside text-gray-300 mb-4">
                                 {modalProject.bullets.map((bullet, i) => (
                                     <li key={i} className="mb-1">
                                         {bullet}

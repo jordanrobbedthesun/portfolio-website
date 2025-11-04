@@ -20,7 +20,7 @@ export default function RecipesPage() {
                 <h1 className="text-xl sm:text-2xl font-bold">🍽️ Jordan&#39;s Recipes (with bad photos)</h1>
                 <Link
                     href="/"
-                    className="bg-white text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200"
+                    className="px-4 py-2 rounded-md text-sm font-medium bg-gray-800 text-gray-100 hover:bg-gray-700 border border-gray-700"
                 >
                     ← Home
                 </Link>

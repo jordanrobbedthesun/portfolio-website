@@ -7,8 +7,8 @@ export default function FooterSection() {
 
     return (
         <footer className="mt-28 px-6">
-            <div className="bg-white dark:bg-gray-800 p-10 rounded-xl shadow border border-gray-300 dark:border-gray-700 text-center">
-                <div className="flex justify-center space-x-10 mb-6 text-[28px] text-gray-700 dark:text-gray-300">
+            <div className="bg-gray-800 p-10 rounded-xl shadow border border-gray-700 text-center">
+                <div className="flex justify-center space-x-10 mb-6 text-[28px] text-gray-300">
                     <a
                         href="https://github.com/jordanrobbedthesun"
                         target="_blank"
@@ -34,12 +34,12 @@ export default function FooterSection() {
                         <FaInstagram />
                     </a>
                 </div>
-                <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-lg font-medium text-gray-300 mb-4">
                     Jordan Robertson · {new Date().getFullYear()}
                 </p>
                 <button
                     onClick={scrollToTop}
-                    className="inline-flex items-center gap-2 text-base font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                    className="inline-flex items-center gap-2 text-base font-semibold text-blue-400 hover:underline"
                 >
                     <FaArrowUp className="text-lg" /> Back to Top
                 </button>

@@ -13,13 +13,14 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className="scroll-smooth">
+        <html lang="en" className="dark scroll-smooth">
         <head>
             <link rel="manifest" href="/manifest.json" />
             <meta name="theme-color" content="#fbbf24" />
+            <meta name="color-scheme" content="dark" />
             <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         </head>
-        <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <body className="bg-gray-900 text-gray-100">
         {children}
         </body>
         </html>

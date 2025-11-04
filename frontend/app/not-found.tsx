@@ -20,7 +20,7 @@ export default function NotFound() {
 
                 <Link
                     href="/"
-                    className="inline-block bg-white text-black px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-200 transition"
+                    className="inline-block px-6 py-3 rounded-md text-sm font-medium bg-gray-800 text-gray-100 hover:bg-gray-700 border border-gray-700 transition"
                 >
                     ← Go back home
                 </Link>
