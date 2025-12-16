@@ -75,6 +75,7 @@ export default function EducationSection() {
                             <li>Software Architecture & Design</li>
                             <li>Intro to Cloud Computing</li>
                             <li>Senior Software Engineering Project I</li>
+                            <li>Senior Software Engineering Project II</li>
                         </ul>
                     </details>
                 </div>

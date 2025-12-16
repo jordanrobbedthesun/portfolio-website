@@ -1,5 +1,11 @@
 const certifications = [
     {
+        title: 'TIP 102 Advanced Certificate',
+        issuer: 'CodePath',
+        date: 'Fall 2025',
+        url: 'https://www.codepath.org/',
+    },
+    {
         title: 'Postman API Fundamentals Student Expert',
         issuer: 'Canvas Credentials',
         date: 'Spring 2025',

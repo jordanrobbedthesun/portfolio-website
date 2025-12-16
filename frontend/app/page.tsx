@@ -35,7 +35,7 @@ export default function Home() {
 
     const externalLinks = useMemo(
         () => [
-            { label: 'Recipes', href: '/recipes' }
+            { label: 'Recipes', href: '/recipes' },
         ],
         []
     )

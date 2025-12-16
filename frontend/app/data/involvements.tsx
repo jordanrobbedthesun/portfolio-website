@@ -12,12 +12,12 @@ export const involvements: {
     images?: string[]
 }[] = [
     {
-        title: 'Intermediate Technical Interview Prep Course',
+        title: 'Intermediate Technical Interview Prep (TIP 102) – Advanced Certificate',
         place: 'CodePath',
         date: 'Fall 2025',
         description:
-            'Participating in CodePaths Intermediate Technical Interview Prep Course',
-        category: 'current',
+            'Completed CodePath TIP 102 with Advanced Certificate.',
+        category: 'previous',
     },
     {
         title: 'Research Assistant',
@@ -42,21 +42,21 @@ export const involvements: {
     {
         title: 'Learning Hub Fellow & Ambassador',
         place: 'FGCU Whitaker College of Engineering',
-        date: 'Fall 2023 – Present',
+        date: 'Fall 2023 – Fall 2025',
         description:
-            'Provided over 400 hours of tutoring in programming and data structures, boosting student confidence and academic performance. Represented the Whitaker College of Engineering as an ambassador at recruitment and outreach events, promoting the software engineering major and engineering programs broadly.',
-        category: 'current',
+            'Provided over 400 hours of tutoring in programming and data structures, boosting student confidence and academic performance. Represented the Whitaker College of Engineering as an ambassador at recruitment and outreach events.',
+        category: 'previous',
         images: [
             '/involvements/learninghub_1.jpg',
             '/involvements/ambassador_1.jpg',
         ],
     },
     {
-        title: 'President',
+        title: 'Student Advisor',
         place: 'Computer Science & Software Engineering Club (CSSEC)',
         date: 'Fall 2022 – Present',
         description:
-            'Led a vibrant club of 20–30 active weekly members, facilitating technical workshops, alumni/company panels, and social events to promote software engineering on campus. Cultivated partnerships with local businesses and alumni employers, contributing to sustained growth and community engagement.',
+            'Advising the CSSEC on programming workshops, events, and industry connections; previously served as President leading 20–30 weekly members, running hackathons (EagleHacks), panels, and partnerships with Arthrex, Spigot, Kingland, Hertz, and more.',
         category: 'current',
         images: [
             '/involvements/cssec_1.jpg',
@@ -70,7 +70,7 @@ export const involvements: {
         place: 'Society of Hispanic Professional Engineers (SHPE)',
         date: 'Fall 2022 – Present',
         description:
-            'Engaged in national and regional conferences, including the 2024 Anaheim conference, networking with engineers nationwide and expanding professional development opportunities.',
+            'Engaged in national and regional conferences, including the 2024 Anaheim conference and the 2025 SHPE National Conference in Philadelphia.',
         category: 'current',
         images: [
             '/involvements/shpe_1.jpg',
@@ -226,11 +226,5 @@ export const involvements: {
             '/involvements/knighthacks2025_1.png',
         ],
     },
-    {
-        title: 'Hacker‎‎',
-        place: 'SharkByte 2025',
-        date: 'Fall 2025',
-        description: 'Upcoming Hackathon 11/7 – 11/9.',
-        category: 'upcoming',
-    },
+    // SharkByte entry removed (not attended)
 ]
