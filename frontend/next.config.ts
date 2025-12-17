@@ -1,13 +1,20 @@
 // next.config.ts
-import withPWA from 'next-pwa'
+import nextPWA from 'next-pwa'
 
 const isDev = process.env.NODE_ENV === 'development'
 
-const nextConfig = withPWA({
+// Configure the PWA plugin first, then wrap the Next.js config
+const withPWA = nextPWA({
     dest: 'public',
     disable: isDev,
     register: true,
     skipWaiting: true,
 })
 
-export default nextConfig
+const nextConfig = {
+    // add other Next.js options here as needed
+    // Silence Next 16 Turbopack + custom webpack plugin warning
+    turbopack: {},
+}
+
+export default withPWA(nextConfig)
