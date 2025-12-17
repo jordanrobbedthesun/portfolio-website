@@ -196,12 +196,13 @@ export default function ESP32Client() {
   // Webcam lifecycle
   useEffect(() => {
     let stream: MediaStream | null = null
+    const video = videoRef.current
     async function start() {
       try {
         stream = await navigator.mediaDevices.getUserMedia({ video: true })
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream
-          await videoRef.current.play()
+        if (video) {
+          video.srcObject = stream
+          await video.play()
         }
       } catch (e) {
         console.error('Webcam error', e)
@@ -210,11 +211,11 @@ export default function ESP32Client() {
     if (camOn) start()
     return () => {
       if (stream) {
-        for (const t of stream.getTracks()) t.stop()
+        stream.getTracks().forEach(t => t.stop())
       }
-      if (videoRef.current) {
-        videoRef.current.pause()
-        videoRef.current.srcObject = null
+      if (video) {
+        video.pause()
+        (video as HTMLVideoElement).srcObject = null
       }
     }
   }, [camOn])
