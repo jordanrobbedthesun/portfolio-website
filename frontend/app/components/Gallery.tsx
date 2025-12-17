@@ -1,11 +1,12 @@
 "use client"
 
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Gallery({
     images,
     columns = { base: 1, sm: 2, md: 3 },
-    itemHeight = 192, // h-48
+    itemHeight = 192, // fallback height before image loads
     sizes = '(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw',
     altBase = 'Image',
     className = '',
@@ -29,22 +30,31 @@ export default function Gallery({
 
     return (
         <div className={`grid ${gridCols} gap-4 ${className}`}>
-            {images.map((src, i) => (
-                <div
-                    key={`${src}-${i}`}
-                    className="w-full relative rounded overflow-hidden border border-gray-300 dark:border-gray-700 shadow"
-                    style={{ height: `${itemHeight}px` }}
-                >
-                    <Image
-                        src={src}
-                        alt={`${altBase} ${i + 1}`}
-                        fill
-                        sizes={sizes}
-                        style={{ objectFit: 'cover' }}
-                        priority={false}
-                    />
-                </div>
-            ))}
+            {images.map((src, i) => {
+                const [ratio, setRatio] = useState<number | null>(null) // h / w
+                const paddingBottom = ratio ? `${ratio * 100}%` : `${(itemHeight / 320) * 100}%`
+                return (
+                    <div
+                        key={`${src}-${i}`}
+                        className="w-full relative rounded overflow-hidden border border-gray-300 dark:border-gray-700 shadow"
+                        style={{ paddingBottom }}
+                    >
+                        <Image
+                            src={src}
+                            alt={`${altBase} ${i + 1}`}
+                            fill
+                            sizes={sizes}
+                            style={{ objectFit: 'contain', objectPosition: 'center' }}
+                            priority={false}
+                            onLoadingComplete={(img) => {
+                                if (img.naturalWidth > 0) {
+                                    setRatio(img.naturalHeight / img.naturalWidth)
+                                }
+                            }}
+                        />
+                    </div>
+                )
+            })}
         </div>
     )
 }

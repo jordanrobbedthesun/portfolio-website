@@ -39,7 +39,7 @@ export default function AboutSection({ scrollToSection }: AboutSectionProps) {
                     .
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-gray-100">
-                    I’m currently exploring internship and research opportunities for Fall 2025. If anything here stands out, feel free to{' '}
+                    I’m currently exploring internship opportunities for Spring 2026 and entry-level roles starting May 2026. If anything here stands out, feel free to{' '}
                     <a
                         href="#contact"
                         onClick={(e) => {

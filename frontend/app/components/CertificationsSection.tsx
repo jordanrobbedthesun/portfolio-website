@@ -3,7 +3,7 @@ const certifications = [
         title: 'TIP 102 Advanced Certificate',
         issuer: 'CodePath',
         date: 'Fall 2025',
-        url: 'https://www.codepath.org/',
+        // url: 'https://www.codepath.org/',
     },
     {
         title: 'Postman API Fundamentals Student Expert',

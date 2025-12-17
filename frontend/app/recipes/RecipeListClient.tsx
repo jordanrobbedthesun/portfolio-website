@@ -31,16 +31,7 @@ export default function RecipeListClient({ recipes }: { recipes: ResolvedRecipe[
                                 {recipe.images && recipe.images.length > 0 && (
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                                         {recipe.images.map((img, idx) => (
-                                            <div key={idx} className="w-full h-[360px] relative rounded-xl overflow-hidden shadow">
-                                                <Image
-                                                    src={img}
-                                                    alt={`${recipe.title} image ${idx + 1}`}
-                                                    fill
-                                                    sizes="(max-width: 640px) 100vw, 50vw"
-                                                    style={{ objectFit: 'cover' }}
-                                                    priority={false}
-                                                />
-                                            </div>
+                                            <RecipeImage key={idx} src={img} alt={`${recipe.title} image ${idx + 1}`} />
                                         ))}
                                     </div>
                                 )}
@@ -82,6 +73,28 @@ export default function RecipeListClient({ recipes }: { recipes: ResolvedRecipe[
                     </section>
                 )
             })}
+        </div>
+    )
+}
+
+function RecipeImage({ src, alt }: { src: string; alt: string }) {
+    const [ratio, setRatio] = useState<number | null>(null) // h / w
+    const paddingBottom = ratio ? `${ratio * 100}%` : '56.25%'
+    return (
+        <div className="w-full relative rounded-xl overflow-hidden shadow" style={{ paddingBottom }}>
+            <Image
+                src={src}
+                alt={alt}
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+                priority={false}
+                onLoadingComplete={(img) => {
+                    if (img.naturalWidth > 0) {
+                        setRatio(img.naturalHeight / img.naturalWidth)
+                    }
+                }}
+            />
         </div>
     )
 }

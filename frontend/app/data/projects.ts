@@ -1,5 +1,21 @@
 export const projects = [
     {
+        title: 'FinScope',
+        date: 'Fall 2025',
+        id: 'finscope',
+        stack: ['React/Vite', 'Python', 'Node.js', 'Supabase', 'MongoDB', 'Google ADK'],
+        github: 'https://github.com/jordanrobbedthesun/FinScope',
+        bullets: [
+            'FinScope is a multi-agent financial intelligence dashboard powered by Google ADK',
+            'Fetching live market data, it analyzes correlations in your portfolio, detects anomalies, and explains insights',
+            'Placed 2nd for OneEthos Company Challenge'
+        ],
+        images: [
+            '/projects/finscope_1.png',
+            '/projects/finscope_2.png',
+        ],
+    }, 
+    {
         title: 'Neo-Eden',
         date: 'Spring 2025',
         id: 'neo-eden',
