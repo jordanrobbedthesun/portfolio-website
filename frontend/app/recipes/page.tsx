@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { recipes as baseRecipes } from '../data/recipes'
-import { listPublicImages } from '../lib/images'
 import type { Recipe } from '../types/content'
 import RecipeListClient from './RecipeListClient'
 
@@ -8,10 +7,7 @@ export default function RecipesPage() {
     // Resolve images: use explicit list if provided; else load from a directory under /public if imagesDir is set
     const resolved = baseRecipes.map((r): Recipe & { images: string[] } => ({
         ...r,
-        images:
-            (r.images && r.images.length > 0)
-                ? r.images
-                : (r.imagesDir ? listPublicImages(r.imagesDir) : []),
+        images: Array.isArray(r.images) ? r.images : [],
     }))
 
     return (
