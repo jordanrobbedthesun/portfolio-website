@@ -20,15 +20,7 @@ export const involvements: {
         category: 'previous',
     },
     {
-        title: 'Research Assistant',
-        place: 'FGCU Whitaker College of Engineering',
-        date: 'Summer 2025 – Present',
-        description:
-            'Conducting Python-based research and development of an AI chatbot tailored for electrical construction, integrating multiple chatbot APIs such as OpenAI and Gemini. Responsibilities include coding, testing, and innovating solutions focused on this specialized domain.',
-        category: 'current',
-    },
-    {
-        title: 'Hackathon Organizer',
+        title: 'Co-Lead Hackathon Coordinator',
         place: 'Computer Science & Software Engineering Club (CSSEC) EagleHacks',
         date: 'Spring 2024 – Present',
         description:

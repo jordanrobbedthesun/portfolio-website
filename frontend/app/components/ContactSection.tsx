@@ -15,7 +15,7 @@ export default function ContactSection({
         <section id="contact" className="mt-16">
             <h2 className="text-3xl font-bold mb-4 text-white">Contact</h2>
             <p className="text-gray-300 mb-6 text-sm">
-                I’m currently open to internships, freelance projects, and new opportunities. Let’s talk!
+                I’m currently open to entry-level, freelance projects, and new opportunities. Let’s talk!
             </p>
 
             {formStatus === 'success' && (
