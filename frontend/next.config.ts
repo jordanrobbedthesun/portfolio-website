@@ -12,7 +12,8 @@ const withPWA = nextPWA({
 })
 
 const nextConfig = {
-    // add other Next.js options here as needed
+    // Explicitly use Turbopack (suppresses webpack/turbopack conflict warning from next-pwa)
+    turbopack: {},
 }
 
 export default withPWA(nextConfig)
