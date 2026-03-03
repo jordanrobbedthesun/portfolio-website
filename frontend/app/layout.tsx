@@ -1,6 +1,8 @@
 // app/layout.tsx
 import './globals.css'
-import React from "react";
+import React from "react"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
     title: 'Jordan Robertson Portfolio',
@@ -22,6 +24,8 @@ export default function RootLayout({
         </head>
         <body className="bg-gray-900 text-gray-100">
         {children}
+        <Analytics />
+        <SpeedInsights />
         </body>
         </html>
     )
