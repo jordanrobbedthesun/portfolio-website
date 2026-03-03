@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import type { ProjectItem } from '../types/content'
+import type { ImageSource, ProjectItem } from '../data/types'
 import Gallery from './Gallery'
 
 interface ProjectsSectionProps {
@@ -12,7 +12,6 @@ interface ProjectsSectionProps {
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
     const [modalProject, setModalProject] = useState<ProjectItem | null>(null)
-    const [modalImages, setModalImages] = useState<string[] | null>(null)
 
     function closeModal() {
         setModalProject(null)
@@ -111,17 +110,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                             ) : (
                                 <ModalGallery
                                     project={modalProject}
-                                    images={modalImages ?? modalProject.images ?? []}
-                                    onNeedImages={async (dir) => {
-                                        if (!dir) return
-                                        try {
-                                            const res = await fetch(`/api/images?dir=${encodeURIComponent(dir)}`)
-                                            const data = await res.json()
-                                            setModalImages(Array.isArray(data.images) ? data.images : [])
-                                        } catch {
-                                            setModalImages([])
-                                        }
-                                    }}
+                                    images={modalProject.images ?? []}
                                 />
                             )}
 
@@ -152,19 +141,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 function ModalGallery({
     project,
     images,
-    onNeedImages,
 }: {
     project: ProjectItem
-    images: string[]
-    onNeedImages: (dir?: string) => void
+    images: ImageSource[]
 }) {
-    useEffect(() => {
-        if ((!images || images.length === 0) && project.imagesDir) {
-            onNeedImages(project.imagesDir)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [project])
-
     if (images && images.length > 0) {
         return (
             <Gallery

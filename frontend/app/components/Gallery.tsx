@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import type { ImageSource } from '../data/types'
 
 export default function Gallery({
     images,
@@ -11,7 +12,7 @@ export default function Gallery({
     altBase = 'Image',
     className = '',
 }: {
-    images: string[]
+    images: ImageSource[]
     columns?: { base?: number; sm?: number; md?: number }
     itemHeight?: number
     sizes?: string
@@ -31,30 +32,53 @@ export default function Gallery({
     return (
         <div className={`grid ${gridCols} gap-4 ${className}`}>
             {images.map((src, i) => {
-                const [ratio, setRatio] = useState<number | null>(null) // h / w
-                const paddingBottom = ratio ? `${ratio * 100}%` : `${(itemHeight / 320) * 100}%`
                 return (
-                    <div
-                        key={`${src}-${i}`}
-                        className="w-full relative rounded overflow-hidden border border-gray-300 dark:border-gray-700 shadow"
-                        style={{ paddingBottom }}
-                    >
-                        <Image
-                            src={src}
-                            alt={`${altBase} ${i + 1}`}
-                            fill
-                            sizes={sizes}
-                            style={{ objectFit: 'contain', objectPosition: 'center' }}
-                            priority={false}
-                            onLoadingComplete={(img) => {
-                                if (img.naturalWidth > 0) {
-                                    setRatio(img.naturalHeight / img.naturalWidth)
-                                }
-                            }}
-                        />
-                    </div>
+                    <GalleryItem
+                        key={i}
+                        src={src}
+                        alt={`${altBase} ${i + 1}`}
+                        sizes={sizes}
+                        itemHeight={itemHeight}
+                    />
                 )
             })}
+        </div>
+    )
+}
+
+function GalleryItem({
+    src,
+    alt,
+    sizes,
+    itemHeight,
+}: {
+    src: ImageSource
+    alt: string
+    sizes: string
+    itemHeight: number
+}) {
+    const [ratio, setRatio] = useState<number | null>(null)
+    const paddingBottom = ratio ? `${ratio * 100}%` : `${(itemHeight / 320) * 100}%`
+
+    return (
+        <div
+            className="w-full relative rounded overflow-hidden border border-gray-300 dark:border-gray-700 shadow"
+            style={{ paddingBottom }}
+        >
+            <Image
+                src={src}
+                alt={alt}
+                fill
+                sizes={sizes}
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+                priority={false}
+                placeholder={typeof src === 'string' ? 'empty' : 'blur'}
+                onLoadingComplete={(img) => {
+                    if (img.naturalWidth > 0) {
+                        setRatio(img.naturalHeight / img.naturalWidth)
+                    }
+                }}
+            />
         </div>
     )
 }

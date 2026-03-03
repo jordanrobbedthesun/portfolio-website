@@ -15,7 +15,13 @@ import FooterSection from './components/FooterSection'
 
 import { involvements } from './data/involvements'
 import { projects } from './data/projects'
-import { scrollToSection } from './utils/scrollToSection'
+
+function scrollToSection(id: string) {
+    const el = document.getElementById(id)
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+    }
+}
 
 export default function Home() {
     const contactRef = useRef<HTMLFormElement>(null)

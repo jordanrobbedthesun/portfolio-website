@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import type { InvolvementItem } from '../types/content'
+import React, { useState } from 'react'
+import type { InvolvementItem } from '../data/types'
 import Gallery from './Gallery'
 
 type Involvement = InvolvementItem
@@ -11,31 +11,6 @@ interface InvolvementsSectionProps {
 
 export default function InvolvementsSection({ involvements }: InvolvementsSectionProps) {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
-    const [dynamicImages, setDynamicImages] = useState<Record<number, string[]>>({})
-
-    useEffect(() => {
-        if (expandedIndex === null) return
-        // figure out which group the expanded index belongs to by reconstructing order
-        const flat: Involvement[] = [
-            ...involvements.filter((i) => i.category === 'current'),
-            ...involvements.filter((i) => i.category === 'previous'),
-            ...involvements.filter((i) => i.category === 'upcoming'),
-        ]
-        const item = flat[expandedIndex]
-        if (!item) return
-        if (item.images && item.images.length > 0) return
-        if (!item.imagesDir) return
-        ;(async () => {
-            try {
-                const res = await fetch(`/api/images?dir=${encodeURIComponent(item.imagesDir!)}`)
-                const data = await res.json()
-                setDynamicImages((prev) => ({ ...prev, [expandedIndex]: Array.isArray(data.images) ? data.images : [] }))
-            } catch {
-                setDynamicImages((prev) => ({ ...prev, [expandedIndex]: [] }))
-            }
-        })()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [expandedIndex])
 
     const grouped = {
         current: involvements.filter((item) => item.category === 'current'),
@@ -53,7 +28,7 @@ export default function InvolvementsSection({ involvements }: InvolvementsSectio
                     {items.map((item, index) => {
                         const globalIndex = groupOffset + index
                         const isExpanded = expandedIndex === globalIndex
-                        const imgs = dynamicImages[globalIndex] ?? item.images ?? []
+                        const imgs = item.images ?? []
 
                         return (
                             <div

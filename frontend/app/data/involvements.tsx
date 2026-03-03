@@ -1,5 +1,11 @@
 import React, {JSX} from 'react'
-import { scrollToSection } from '../utils/scrollToSection'
+
+function scrollToSection(id: string) {
+    const el = document.getElementById(id)
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+    }
+}
 
 export const involvements: {
     title: string | JSX.Element

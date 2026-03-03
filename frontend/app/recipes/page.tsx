@@ -1,14 +1,20 @@
 import Link from 'next/link'
 import { recipes as baseRecipes } from '../data/recipes'
-import type { Recipe } from '../types/content'
+import type { ImageSource, Recipe } from '../data/types'
 import RecipeListClient from './RecipeListClient'
 
+type ResolvedRecipe = Recipe & { images: ImageSource[]; tags: string[] }
+
+function normalizeRecipe(recipe: Recipe): ResolvedRecipe {
+    return {
+        ...recipe,
+        images: Array.isArray(recipe.images) ? recipe.images : [],
+        tags: Array.isArray(recipe.tags) ? recipe.tags : [],
+    }
+}
+
 export default function RecipesPage() {
-    // Resolve images: use explicit list if provided; else load from a directory under /public if imagesDir is set
-    const resolved = baseRecipes.map((r): Recipe & { images: string[] } => ({
-        ...r,
-        images: Array.isArray(r.images) ? r.images : [],
-    }))
+    const resolved = baseRecipes.map(normalizeRecipe)
 
     return (
         <main className="min-h-screen bg-[#0e0e0e] text-white font-sans pb-16 pt-24 px-4 sm:px-8">

@@ -14,7 +14,9 @@ const withPWA = nextPWA({
 const nextConfig = {
     // add other Next.js options here as needed
     // Silence Next 16 Turbopack + custom webpack plugin warning
-    turbopack: {},
+    turbopack: {
+        root: __dirname,
+    },
 }
 
 export default withPWA(nextConfig)
