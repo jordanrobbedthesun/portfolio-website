@@ -1,0 +1,385 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 4px;
+  background: #f3f7fb;
+  min-height: auto;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.header {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #003a70;
+}
+
+.header h1 {
+  margin: 0 0 6px 0;
+  color: #2d3748;
+  font-size: 20px;
+}
+
+.description {
+  color: #4a5568;
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.metadata {
+  display: flex;
+  gap: 16px;
+  margin: 10px 0 0 0;
+  font-size: 12px;
+  color: #718096;
+  flex-wrap: wrap;
+}
+
+.metadata span {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #edf2f7;
+  border-radius: 4px;
+}
+
+.legend {
+  background: white;
+  padding: 16px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.legendHeader {
+  margin-bottom: 12px;
+}
+
+.legendHeader h3 {
+  margin: 0 0 4px 0;
+  color: #1f2937;
+  font-size: 15px;
+}
+
+.legendCompact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #4a5568;
+}
+
+.legendBox {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.legendBox.current {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.legendBox.prerequisite {
+  background: linear-gradient(135deg, #22d3ee 0%, #0284c7 100%);
+}
+
+.legendBox.prereqSequence {
+  background: linear-gradient(135deg, #d946ef 0%, #7e22ce 100%);
+}
+
+.legendBox.corequisite {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+}
+
+.legendBox.postCoreq {
+  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+}
+
+.legendBox.postrequisite {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+}
+
+.plannerPanel {
+  background: white;
+  padding: 16px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #007a33;
+}
+
+.plannerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.plannerHeader h3 {
+  margin: 0 0 4px 0;
+  color: #1f2937;
+  font-size: 15px;
+}
+
+.plannerHeader p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.clearButton {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background: #eef2f7;
+}
+
+.plannerStats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.plannerStats span {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #edf2f7;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.plannerLegend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.legendBox.taken {
+  background: linear-gradient(135deg, #64748b 0%, #334155 100%);
+}
+
+.legendBox.available {
+  background: linear-gradient(135deg, #dcfce7 0%, #86efac 100%);
+  border-color: #16a34a;
+}
+
+.availableList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.plannerSections {
+  display: grid;
+  gap: 14px;
+}
+
+.plannerSection h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 12px;
+}
+
+.availableChip {
+  border: 1px solid #86efac;
+  background: #f0fdf4;
+  color: #166534;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.emptyState {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.yearsContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  padding-bottom: 12px;
+}
+
+.year {
+  flex: 0 0 auto;
+  min-width: 360px;
+  max-width: 360px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #003a70;
+}
+
+.yearTitle {
+  color: white;
+  background: linear-gradient(135deg, #003a70 0%, #005a9c 70%, #007a33 100%);
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px 12px;
+  border-bottom: none;
+  text-align: center;
+}
+
+.semestersContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.semester {
+  background: #f9fafb;
+  border-radius: 0;
+  padding: 10px;
+  box-shadow: none;
+  border-left: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.semester:first-child {
+  border-top: none;
+  border-left: none;
+}
+
+.semester:nth-child(2) {
+  border-top: none;
+}
+
+.semesterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d1d5db;
+  gap: 6px;
+}
+
+.semesterHeader h3 {
+  margin: 0;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.creditsLabel {
+  background: #003a70;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.courseGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info {
+  background: white;
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 3px solid #007a33;
+}
+
+.info h3 {
+  margin: 0 0 10px 0;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.info p {
+  color: #4a5568;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+  font-size: 12px;
+}
+
+.info p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .year {
+    min-width: 320px;
+    max-width: 320px;
+  }
+
+  .courseGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .legend {
+    padding: 14px;
+  }
+
+  .metadata {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .legendCompact {
+    gap: 10px;
+  }
+
+  .plannerHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .year {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .courseGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
