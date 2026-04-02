@@ -17,6 +17,14 @@ export const involvements: {
     linkType?: 'anchor' | 'external'
     images?: string[]
 }[] = [
+        {
+            title: 'Advanced Technical Interview Prep (TIP 103)',
+            place: 'CodePath',
+            date: 'Spring 2026',
+            description:
+                'Completing CodePath TIP 103 with Certificate.',
+            category: 'current',
+        },
     {
         title: 'Intermediate Technical Interview Prep (TIP 102) – Advanced Certificate',
         place: 'CodePath',
@@ -26,15 +34,17 @@ export const involvements: {
         category: 'previous',
     },
     {
-        title: 'Co-Lead Hackathon Coordinator',
+        title: 'Lead Hackathon Coordinator',
         place: 'Computer Science & Software Engineering Club (CSSEC) EagleHacks',
         date: 'Spring 2024 – Present',
         description:
-            'Coordinated and hosted two successful hackathons with 50–60 student participants and support from local sponsors including Arthrex, Spigot, Kingland, and Hertz. Managed event logistics, prize distribution ($1,700+), workshops, and judging improvements inspired by insights from major hackathons like ShellHacks. Enhanced student engagement and strengthened community partnerships.',
+            'Coordinated and hosted three successful hackathons with 180+ student participants and support from local sponsors including Arthrex, Spigot, Kingland, and Hertz. Managed event logistics, prize distribution ($3,000+), workshops, and judging improvements inspired by insights from major hackathons like ShellHacks. Enhanced student engagement and strengthened community partnerships.',
         category: 'current',
         images: [
             '/involvements/eaglehacks_1.jpg',
             '/involvements/eaglehacks_2.jpg',
+            '/involvements/eaglehacks_3.jpg',
+            '/involvements/eaglehacks_4.jpg',
         ],
     },
     {
@@ -42,7 +52,7 @@ export const involvements: {
         place: 'FGCU Whitaker College of Engineering',
         date: 'Fall 2023 – Fall 2025',
         description:
-            'Provided over 400 hours of tutoring in programming and data structures, boosting student confidence and academic performance. Represented the Whitaker College of Engineering as an ambassador at recruitment and outreach events.',
+            'Provided over 450 hours of tutoring in programming and data structures, boosting student confidence and academic performance. Represented the Whitaker College of Engineering as an ambassador at recruitment and outreach events.',
         category: 'previous',
         images: [
             '/involvements/learninghub_1.jpg',
@@ -54,7 +64,7 @@ export const involvements: {
         place: 'Computer Science & Software Engineering Club (CSSEC)',
         date: 'Fall 2022 – Present',
         description:
-            'Advising the CSSEC on programming workshops, events, and industry connections; previously served as President leading 20–30 weekly members, running hackathons (EagleHacks), panels, and partnerships with Arthrex, Spigot, Kingland, Hertz, and more.',
+            'Advising the CSSEC on programming workshops, events, and industry connections; previously served as President leading 40–50 weekly members, running hackathons (EagleHacks), panels, and partnerships with Arthrex, Spigot, Kingland, Hertz, and more.',
         category: 'current',
         images: [
             '/involvements/cssec_1.jpg',
@@ -68,7 +78,7 @@ export const involvements: {
         place: 'Society of Hispanic Professional Engineers (SHPE)',
         date: 'Fall 2022 – Present',
         description:
-            'Engaged in national and regional conferences, including the 2024 Anaheim conference and the 2025 SHPE National Conference in Philadelphia.',
+            'Engaged in national and regional conferences, including the 2024 Anaheim Conference and the 2025 SHPE National Conference in Philadelphia.',
         category: 'current',
         images: [
             '/involvements/shpe_1.jpg',
@@ -120,7 +130,7 @@ export const involvements: {
             link: '#imposture',
             linkType: 'anchor',
             description:
-                'Collaborated in a team of 4 to develop iMPOSTURE, a real-time posture analyzer and recommendation system using computer vision models from Google MediaPipe and YOLOv11.',
+                'Collaborated in a team of 4 to develop iMPOSTURE, a real-time posture analyzer and recommendation system using computer vision models from Google MediaPipe and YOLOv11. Featured on the news at AI Day: https://www.wgcu.org/shows/southwest-florida-in-focus/clip/fgcu-students-using-ai-in-new-business-concepts',
             category: 'previous',
             images: [
                 '/involvements/shellhacks2025_1.png',
@@ -224,5 +234,4 @@ export const involvements: {
             '/involvements/knighthacks2025_1.png',
         ],
     },
-    // SharkByte entry removed (not attended)
 ]

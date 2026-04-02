@@ -635,4 +635,20 @@ export const recipes: Recipe[] = [
             'Serve rice as base, sliced chicken on top, roasted broccoli on the side or mixed in.',
         ],
     },
+    {
+        title: '🥞 Mega Pancake',
+        tags: ['pancake', 'stove'],
+        images: ['/images/recipes/pancake-1.jpg', '/images/recipes/pancake-2.jpg', '/images/recipes/pancake-3.jpg'],
+        ingredients: [
+            '1 cup Kodiak Power Cakes Pancake Mix',
+            '5 Egg Whites',
+            '1/2 tbsp butter'
+        ],
+        instructions: [
+            'Mix together Pancake Mix and Egg Whites. Add milk/water for desired consistency.',
+            'Heat stainless steel pan over medium for 2–3 minutes. Add butter. ',
+            'Pour in pancake mix and cook for 2-3 minutes, then flip and cook for 1 minute',
+            'Plate and eat',
+        ],
+    },
 ]

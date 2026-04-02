@@ -45,13 +45,14 @@ export const projects = [
             'Implemented Google ADK to create 3 agents that analyze posture, detect phones, and monitor noise',
             'Integrated Google Cloud Logging for real-time data streaming recording over 38,000 rows of user data',
             'Achieved Top 11 overall and 2nd place in Google Cloud ADK Featured Challenge among 1400+ teams',
+            'Featured on News at FGCUs AI Day: https://www.wgcu.org/shows/southwest-florida-in-focus/clip/fgcu-students-using-ai-in-new-business-concepts',
         ],
-        // images: [
-        //     '/projects/neoeden_1.jpg',
-        //     '/projects/neoeden_2.jpg',
-        //     '/projects/neoeden_3.jpg',
-        //     '/projects/neoeden_4.jpg',
-        // ],
+        images: [
+            '/projects/imposture_1.jpg',
+            '/projects/imposture_2.jpg',
+            '/projects/imposture_3.jpg',
+            '/projects/imposture_4.jpg',
+        ],
     },
     {
         title: 'Portfolio Website',
