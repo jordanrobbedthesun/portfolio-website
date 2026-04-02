@@ -1,21 +1,5 @@
 export const projects = [
     {
-        // title: 'CallMiner Senior Project',
-        // date: 'Fall 2025 - Present',
-        // id: 'apiatlas',
-        // stack: ['React/Vite','Python', 'Node.js', 'Supabase', 'OpenAI '],
-        // // github: 'https://github.com/jordanrobbedthesun/FinScope',
-        // bullets: [
-        //     'Built an AI-powered API routing platform that interprets natural-language prompts and automatically selects the most relevant external API for each request.',
-        //     'Developed a full-stack web application with a React frontend and FastAPI backend to manage prompt submission, API execution, and structured response delivery.',
-        //     'Implemented dynamic API registry management so users can add custom APIs (endpoint, method, required parameters) without redeploying the system.',
-        // ],
-        // images: [
-        //     '/projects/finscope_1.png',
-        //     '/projects/finscope_2.png',
-        // ],
-    }, 
-    {
         title: 'FinScope',
         date: 'Fall 2025',
         id: 'finscope',
