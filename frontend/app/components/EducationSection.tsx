@@ -7,7 +7,7 @@ export default function EducationSection() {
                     Florida Gulf Coast University – B.S. in Software Engineering, Minor in Entrepreneurship
                 </p>
                 <ul className="list-disc list-inside text-sm mt-1 space-y-1 text-gray-300">
-                    <li>GPA: 3.81 | Dean’s List x4, President’s List x2</li>
+                    <li>GPA: 3.8 | Dean’s List x4, President’s List x3</li>
                     <li>Honors College | TRIO Scholar | First-Gen Student</li>
                 </ul>
 

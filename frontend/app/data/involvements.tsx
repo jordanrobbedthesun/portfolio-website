@@ -17,14 +17,14 @@ export const involvements: {
     linkType?: 'anchor' | 'external'
     images?: string[]
 }[] = [
-        {
-            title: 'Advanced Technical Interview Prep (TIP 103)',
-            place: 'CodePath',
-            date: 'Spring 2026',
-            description:
-                'Completing CodePath TIP 103 with Certificate.',
-            category: 'current',
-        },
+    {
+        title: 'Just Graduated!',
+        place: 'FGCU',
+        date: 'Spring 2026',
+        description:
+            '',
+        category: 'current',
+    },
     {
         title: 'Intermediate Technical Interview Prep (TIP 102) – Advanced Certificate',
         place: 'CodePath',
@@ -36,10 +36,10 @@ export const involvements: {
     {
         title: 'Lead Hackathon Coordinator',
         place: 'Computer Science & Software Engineering Club (CSSEC) EagleHacks',
-        date: 'Spring 2024 – Present',
+        date: 'Spring 2024 – Spring 2026',
         description:
             'Coordinated and hosted three successful hackathons with 180+ student participants and support from local sponsors including Arthrex, Spigot, Kingland, and Hertz. Managed event logistics, prize distribution ($3,000+), workshops, and judging improvements inspired by insights from major hackathons like ShellHacks. Enhanced student engagement and strengthened community partnerships.',
-        category: 'current',
+        category: 'previous',
         images: [
             '/involvements/eaglehacks_1.jpg',
             '/involvements/eaglehacks_2.jpg',
@@ -62,10 +62,10 @@ export const involvements: {
     {
         title: 'Student Advisor',
         place: 'Computer Science & Software Engineering Club (CSSEC)',
-        date: 'Fall 2022 – Present',
+        date: 'Fall 2022 – Spring 2026',
         description:
             'Advising the CSSEC on programming workshops, events, and industry connections; previously served as President leading 40–50 weekly members, running hackathons (EagleHacks), panels, and partnerships with Arthrex, Spigot, Kingland, Hertz, and more.',
-        category: 'current',
+        category: 'previous',
         images: [
             '/involvements/cssec_1.jpg',
             '/involvements/cssec_2.jpg',
@@ -76,10 +76,10 @@ export const involvements: {
     {
         title: 'Member',
         place: 'Society of Hispanic Professional Engineers (SHPE)',
-        date: 'Fall 2022 – Present',
+        date: 'Fall 2022 – Spring 2026',
         description:
             'Engaged in national and regional conferences, including the 2024 Anaheim Conference and the 2025 SHPE National Conference in Philadelphia.',
-        category: 'current',
+        category: 'previous',
         images: [
             '/involvements/shpe_1.jpg',
         ]
